@@ -10,6 +10,7 @@ package expendio.activaexpendio.modelo;
  * @author Administrador
  */
 public class Usuario {
+    private long id;
     private String login;
     private String nombres;
     private String password;
@@ -54,6 +55,20 @@ public class Usuario {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(long id) {
+        this.id = id;
     }
     
     
