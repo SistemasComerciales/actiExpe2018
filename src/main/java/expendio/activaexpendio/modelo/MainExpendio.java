@@ -5,7 +5,7 @@
  */
 package expendio.activaexpendio.modelo;
 
-import expendio.activaexpendio.vista.GUIInicio;
+import expendio.activaexpendio.vista.*;
 
 /**
  *
@@ -40,7 +40,7 @@ public class MainExpendio {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUIInicio().setVisible(true);
+                new GUIMenu(new Usuario()).setVisible(true);
             }
         });
     }
