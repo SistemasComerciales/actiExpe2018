@@ -12,6 +12,7 @@ import java.sql.Timestamp;
  * @author Administrador
  */
 public class Producto {
+    private long id;
     private String codigo;
     private String nombre;
     private String presentacion;
@@ -237,6 +238,20 @@ public class Producto {
      */
     public void setModificacion(Timestamp modificacion) {
         this.modificacion = modificacion;
+    }
+
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(long id) {
+        this.id = id;
     }
     
     

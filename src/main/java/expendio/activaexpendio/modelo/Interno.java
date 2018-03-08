@@ -13,6 +13,7 @@ import java.util.Date;
  * @author Administrador
  */
 public class Interno {
+    private long id;
     private String td;
     private String primerApellido;
     private String segundoApellido;
@@ -267,6 +268,20 @@ public class Interno {
      */
     public void setModificacion(Timestamp modificacion) {
         this.modificacion = modificacion;
+    }
+
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(long id) {
+        this.id = id;
     }
     
     
