@@ -5,6 +5,8 @@
  */
 package expendio.activaexpendio.modelo;
 
+import java.sql.Timestamp;
+
 /**
  *
  * @author Usuario
@@ -23,7 +25,12 @@ public class DocumentoFuente {
     private boolean costeoInventario;
     private int idBodega;
     private boolean estado;
+    private Usuario usuario;
+    private String eliminado;
+    private Timestamp creacion;
+    private Timestamp modificacion;
 
+    
     /**
      * @return the codigo
      */
@@ -31,6 +38,8 @@ public class DocumentoFuente {
         return codigo;
     }
 
+    
+    
     /**
      * @param codigo the codigo to set
      */
@@ -204,6 +213,62 @@ public class DocumentoFuente {
      */
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    /**
+     * @return the usuario
+     */
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    /**
+     * @param usuario the usuario to set
+     */
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    /**
+     * @return the eliminado
+     */
+    public String getEliminado() {
+        return eliminado;
+    }
+
+    /**
+     * @param eliminado the eliminado to set
+     */
+    public void setEliminado(String eliminado) {
+        this.eliminado = eliminado;
+    }
+
+    /**
+     * @return the creacion
+     */
+    public Timestamp getCreacion() {
+        return creacion;
+    }
+
+    /**
+     * @param creacion the creacion to set
+     */
+    public void setCreacion(Timestamp creacion) {
+        this.creacion = creacion;
+    }
+
+    /**
+     * @return the modificacion
+     */
+    public Timestamp getModificacion() {
+        return modificacion;
+    }
+
+    /**
+     * @param modificacion the modificacion to set
+     */
+    public void setModificacion(Timestamp modificacion) {
+        this.modificacion = modificacion;
     }
     
     
