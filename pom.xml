@@ -38,7 +38,7 @@
                 <configuration>
                     <descriptorRefs>
                         <!-- This tells Maven to include all dependencies -->
-                        <descriptorRef>Inicio</descriptorRef>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                     <archive>
                         <manifest>
