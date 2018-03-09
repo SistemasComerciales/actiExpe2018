@@ -6,43 +6,63 @@
 package expendio.activaexpendio.modelo;
 
 import expendio.activaexpendio.vista.*;
+import java.awt.EventQueue;
+import javax.swing.SwingWorker;
+import utils.ValidacionApertura;
 
 /**
  *
  * @author Administrador
  */
 public class MainExpendio {
-    public static void main(String[] args) throws Exception {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUIInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUIInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUIInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUIInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+    public static final ValidacionApertura control = ValidacionApertura.getInstance("imagenes\\Activa");
+
+    public static void main(String[] args) {
+        main();
+    }
+
+    private static void main() {
+        EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new GUIInicio(new Usuario()).setVisible(true);                
+                try {
+                    /// estas dos lineas suavisan el dibujado del los textos del las ventanas no quitar
+                    System.setProperty("awt.useSystemAAFontSettings", "on");
+                    System.setProperty("swing.aatext", "true");
+                    @SuppressWarnings("rawtypes")
+                    final SwingWorker work = new SwingWorker() {
+//                        GUIInicio a = new GUIInicio();
+
+                        @Override
+                        protected Object doInBackground() throws Exception {
+                            /*if (!"N".equals(Configuracion.validacionApertura)) */{
+                                if (!MainExpendio.control.comprobar()) {
+                                    System.exit(0);
+                                }
+                            }
+
+                            Establecimiento establecimiento = new Establecimiento();
+                            establecimiento.setCodigo("530");
+                            establecimiento.setNombre("QUIBDÓ");
+                            establecimiento.setNit("");
+                            establecimiento.setTipo("P");
+                            
+                            Usuario usuario = new Usuario();
+                            usuario.setPeriodoContable("2018");
+                            usuario.setLogin("SUPERVISOR");
+                            usuario.setNombres("Supervisor");
+                            new GUIMenu(usuario, establecimiento).setVisible(true);
+                            return null;
+                        }
+                    };
+                    work.execute();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    control.cerrarApp();
+                }
             }
         });
     }
-	
+
 }

@@ -98,6 +98,49 @@ public class Boton extends JButton {
     }
 
     /**
+     * metodo que acomoda el texto para el menuPrimerNivel
+     */
+    public void textoParaMenuPrimerNivel() {
+        this.setLayout(null);
+        JLabel tex = new JLabel(texto, JLabel.LEFT);
+        tex.setLocation(0, 0);
+        tex.setSize(CargaImagenes.anchoBotonPrimerNivelMenu, CargaImagenes.altoBotonPrimerNivelMenu);
+        tex.setForeground(new Color(255, 255, 255));
+        tex.setFont(new Fuente().MyFont(0, CargaImagenes.anchoBotonPrimerNivelMenu / 17f));
+        tex.setText("<html>&nbsp; &nbsp; &nbsp;" + texto + "</html>");
+        this.add(tex);
+        this.setText("");
+    }
+
+    /**
+     * metodo que acomoda el texto para el menuSegundoNivel
+     */
+    public void textoParaMenuSegundoNivel() {
+        JLabel tex = new JLabel(texto, JLabel.LEFT);
+        tex.setLocation(0, 0);
+        tex.setSize(CargaImagenes.anchoBotonSegundoNivelMenu, CargaImagenes.altoBotonSegundoNivelMenu);
+        tex.setForeground(new Color(255, 255, 255));
+        tex.setFont(new Fuente().MyFont(0, CargaImagenes.anchoBotonSegundoNivelMenu / 13f));
+        tex.setText("<html> &nbsp; &nbsp; &nbsp;" + texto + "</html>");
+        this.add(tex);
+        this.setText("");
+    }
+
+    /**
+     * metodo que acomoda el texto para el menuSegundoNivel
+     */
+    public void textoParaMenuTercerNivel() {
+        JLabel tex = new JLabel(texto, JLabel.LEFT);
+        tex.setLocation(0, 0);
+        tex.setSize(CargaImagenes.anchoBotonTercerNivelMenu, CargaImagenes.altoBotonTercerNivelMenu);
+        tex.setForeground(new Color(255, 255, 255));
+        tex.setFont(new Fuente().MyFont(0, CargaImagenes.anchoBotonTercerNivelMenu / 13f));
+        tex.setText("<html> &nbsp; &nbsp;" + texto + "</html>");
+        this.add(tex);
+        this.setText("");
+    }
+
+    /**
      * metodo que contiene los eventos nesesarios del boton
      */
     public void accionBoton() {
