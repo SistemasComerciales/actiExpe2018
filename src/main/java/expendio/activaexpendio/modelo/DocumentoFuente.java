@@ -27,7 +27,7 @@ public class DocumentoFuente {
     private int idBodega;
     private boolean estado;
     private Usuario usuario;
-    private String eliminado;
+    private boolean eliminado;
     private Timestamp creacion;
     private Timestamp modificacion;
 
@@ -230,19 +230,7 @@ public class DocumentoFuente {
         this.usuario = usuario;
     }
 
-    /**
-     * @return the eliminado
-     */
-    public String getEliminado() {
-        return eliminado;
-    }
 
-    /**
-     * @param eliminado the eliminado to set
-     */
-    public void setEliminado(String eliminado) {
-        this.eliminado = eliminado;
-    }
 
     /**
      * @return the creacion
@@ -284,6 +272,20 @@ public class DocumentoFuente {
      */
     public void setId(long id) {
         this.id = id;
+    }
+
+    /**
+     * @return the eliminado
+     */
+    public boolean isEliminado() {
+        return eliminado;
+    }
+
+    /**
+     * @param eliminado the eliminado to set
+     */
+    public void setEliminado(boolean eliminado) {
+        this.eliminado = eliminado;
     }
     
     
