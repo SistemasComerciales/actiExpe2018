@@ -25,7 +25,7 @@ public class Producto {
     private String observaciones;
     private String estado;
     private Usuario usuario;
-    private String eliminado;
+    private boolean eliminado;
     private Timestamp creacion;
     private Timestamp modificacion;
 
@@ -201,14 +201,14 @@ public class Producto {
     /**
      * @return the eliminado
      */
-    public String getEliminado() {
+    public boolean getEliminado() {
         return eliminado;
     }
 
     /**
      * @param eliminado the eliminado to set
      */
-    public void setEliminado(String eliminado) {
+    public void setEliminado(boolean eliminado) {
         this.eliminado = eliminado;
     }
 
@@ -255,6 +255,12 @@ public class Producto {
     }
     
     
+    public void eliminar(){
+        this.eliminado = true;
+    }
     
+    public boolean esEliminado(){
+        return eliminado;
+    }
     
 }
