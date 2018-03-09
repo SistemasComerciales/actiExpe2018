@@ -5,7 +5,6 @@
  */
 package expendio.activaexpendio.modelo.persistencia;
 
-import expendio.activaexpendio.modelo.Bodega;
 import expendio.activaexpendio.modelo.DocumentoFuente;
 import java.util.ArrayList;
 

@@ -17,7 +17,7 @@ public class GrupoProducto {
     private String nombre;
     private String estado;
     private Usuario usuario;
-    private String eliminado;
+    private boolean eliminado;
     private Timestamp creacion;
     private Timestamp modificacion;
     
@@ -79,20 +79,6 @@ public class GrupoProducto {
     }
 
     /**
-     * @return the eliminado
-     */
-    public String getEliminado() {
-        return eliminado;
-    }
-
-    /**
-     * @param eliminado the eliminado to set
-     */
-    public void setEliminado(String eliminado) {
-        this.eliminado = eliminado;
-    }
-
-    /**
      * @return the creacion
      */
     public Timestamp getCreacion() {
@@ -132,6 +118,20 @@ public class GrupoProducto {
      */
     public void setId(long id) {
         this.id = id;
+    }
+
+    /**
+     * @return the eliminado
+     */
+    public boolean isEliminado() {
+        return eliminado;
+    }
+
+    /**
+     * @param eliminado the eliminado to set
+     */
+    public void setEliminado(boolean eliminado) {
+        this.eliminado = eliminado;
     }
     
     
