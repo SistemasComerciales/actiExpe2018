@@ -14,7 +14,7 @@ import java.util.Date;
  * @author Administrador
  */
 public class Transaccion {
-    private String id;
+    private long id;
     private DocumentoFuente documento;
     private String numero;
     private Date fecha;
@@ -138,19 +138,7 @@ public class Transaccion {
         this.modificacion = modificacion;
     }
 
-    /**
-     * @return the id
-     */
-    public String getId() {
-        return id;
-    }
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(String id) {
-        this.id = id;
-    }
 
     /**
      * @return the listItem
@@ -164,6 +152,20 @@ public class Transaccion {
      */
     public void setListItem(ArrayList<TransaccionItem> listItem) {
         this.listItem = listItem;
+    }
+
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(long id) {
+        this.id = id;
     }
     
     
