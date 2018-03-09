@@ -40,7 +40,7 @@ public class MainExpendio {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUIMenu(new Usuario()).setVisible(true);
+                new GUIMenu().setVisible(true);
             }
         });
     }
