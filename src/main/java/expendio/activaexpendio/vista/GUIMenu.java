@@ -42,12 +42,9 @@ public class GUIMenu extends ClaseGeneral {
 
     private int anchoBotonesPanel1, altoBotonesPanel1;
 
+
     public GUIMenu(Usuario usuario) {
         super(usuario);
-
-        Imagenes.fondoInternalFrame(NombreImagenes.imFondoMenu, this.getWidth(), this.getHeight(), this);
-        anchoBotonesPanel1 = 2 * this.getWidth() / 7;
-        altoBotonesPanel1 = 2 * this.getHeight() / 25;
     }
 
     @Override
