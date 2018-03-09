@@ -17,7 +17,7 @@ public class Bodega {
     private String nombre;
     private boolean estado;
     private Usuario usuario;
-    private String eliminado;
+    private boolean eliminado;
     private Timestamp creacion;
     private Timestamp modificacion;
 
@@ -77,20 +77,7 @@ public class Bodega {
         this.usuario = usuario;
     }
 
-    /**
-     * @return the eliminado
-     */
-    public String getEliminado() {
-        return eliminado;
-    }
-
-    /**
-     * @param eliminado the eliminado to set
-     */
-    public void setEliminado(String eliminado) {
-        this.eliminado = eliminado;
-    }
-
+    
     /**
      * @return the creacion
      */
@@ -131,6 +118,20 @@ public class Bodega {
      */
     public void setId(long id) {
         this.id = id;
+    }
+
+    /**
+     * @return the eliminado
+     */
+    public boolean isEliminado() {
+        return eliminado;
+    }
+
+    /**
+     * @param eliminado the eliminado to set
+     */
+    public void setEliminado(boolean eliminado) {
+        this.eliminado = eliminado;
     }
     
     
