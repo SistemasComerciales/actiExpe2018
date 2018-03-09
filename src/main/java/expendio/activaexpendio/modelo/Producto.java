@@ -259,7 +259,7 @@ public class Producto {
         this.eliminado = true;
     }
     
-    public boolean esEliminado(){
+    public boolean estaEliminado(){
         return eliminado;
     }
     

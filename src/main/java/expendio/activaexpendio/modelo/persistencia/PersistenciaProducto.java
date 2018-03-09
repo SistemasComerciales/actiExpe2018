@@ -6,7 +6,6 @@
 package expendio.activaexpendio.modelo.persistencia;
 
 import expendio.activaexpendio.modelo.Producto;
-import expendio.activaexpendio.modelo.Usuario;
 import java.util.ArrayList;
 
 /**
@@ -57,7 +56,7 @@ public class PersistenciaProducto {
     public ArrayList<Producto> getProductosActivos(){
         ArrayList<Producto> productosRetorno = new ArrayList<>();
         for(int i=0; i<productos.size(); i++){
-            if(!productos.get(i).esEliminado()){
+            if(!productos.get(i).estaEliminado()){
                 productosRetorno.add(productos.get(i));
             }
         }
