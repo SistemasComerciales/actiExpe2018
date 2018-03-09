@@ -63,8 +63,9 @@ public class PersistenciaBodega {
     }
     
     /**
-     * 
-     * @return 
+     * metodo que cambia el estado a borrado true de una bodega 
+     * @param bodega
+     * @return bodega borrada o null
      */
     public Bodega borrar(Bodega bodega){
         Long id = bodega.getId();
@@ -85,10 +86,58 @@ public class PersistenciaBodega {
     public boolean validarExiste(Bodega bodega){
         for (int i = 0; i < listaBodegas.size(); i++) {
             if (bodega.getCodigo().equals(listaBodegas.get(i).getCodigo())) {
-                return true;
+                if (!listaBodegas.get(i).isEliminado()) {
+                    return true;
+                }
             }
         }
         return false;
+    }
+    
+    /**
+     * metodo que consulta todas las bodegas que no esten eliminadas
+     * @return bodegas que no esten eliminadas
+     */
+    public ArrayList<Bodega> consultarTodos(){
+        ArrayList<Bodega> bodegas = new ArrayList<>();
+        for (int i = 0; i < listaBodegas.size(); i++) {
+            if (!listaBodegas.get(i).isEliminado()) {
+                bodegas.add(listaBodegas.get(i));
+            }
+        }
+        return bodegas;
+    }
+    
+    /**
+     * metodo que consulta una bodega por id
+     * @param id
+     * @return null si no hay conincidencia o la bodega encontrada
+     */
+    public Bodega colsultarPorId(String id){
+        for (int i = 0; i < listaBodegas.size() ; i++) {
+            if (!listaBodegas.get(i).isEliminado()) {
+                if (id.equals( listaBodegas.get(i).getId() ) ) {
+                    return listaBodegas.get(i);
+                }
+            }
+        }
+        return null;
+    }
+    
+     /**
+     * metodo que consulta una bodega por codigo
+     * @param codigo
+     * @return null si no hay conincidencia o la bodega encontrada
+     */
+    public Bodega colsultarPorCodigo(String codigo){
+        for (int i = 0; i < listaBodegas.size() ; i++) {
+            if (!listaBodegas.get(i).isEliminado()) {
+                if (codigo.equals( listaBodegas.get(i).getCodigo() ) ) {
+                    return listaBodegas.get(i);
+                }
+            }
+        }
+        return null;
     }
     
     

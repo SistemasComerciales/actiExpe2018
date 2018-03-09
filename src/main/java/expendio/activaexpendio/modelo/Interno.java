@@ -31,6 +31,8 @@ public class Interno {
     private boolean eliminado;
     private Timestamp creacion;
     private Timestamp modificacion;
+    private String rutaImagen;
+    
 
     /**
      * @return the td
@@ -299,4 +301,20 @@ public class Interno {
     public boolean estaEliminado(){
         return estado;
     }
+
+    /**
+     * @return the rutaImagen
+     */
+    public String getRutaImagen() {
+        return rutaImagen;
+    }
+
+    /**
+     * @param rutaImagen the rutaImagen to set
+     */
+    public void setRutaImagen(String rutaImagen) {
+        this.rutaImagen = rutaImagen;
+    }
+    
+    
 }
