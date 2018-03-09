@@ -26,9 +26,9 @@ public class Interno {
     private Date fechaSalida;
     private String delito;
     private String observaciones;
-    private String estado;
+    private boolean estado;
     private Usuario usuario;
-    private String eliminado;
+    private boolean eliminado;
     private Timestamp creacion;
     private Timestamp modificacion;
 
@@ -203,14 +203,14 @@ public class Interno {
     /**
      * @return the estado
      */
-    public String getEstado() {
+    public boolean getEstado() {
         return estado;
     }
 
     /**
      * @param estado the estado to set
      */
-    public void setEstado(String estado) {
+    public void setEstado(boolean estado) {
         this.estado = estado;
     }
 
@@ -231,14 +231,14 @@ public class Interno {
     /**
      * @return the eliminado
      */
-    public String getEliminado() {
+    public boolean getEliminado() {
         return eliminado;
     }
 
     /**
      * @param eliminado the eliminado to set
      */
-    public void setEliminado(String eliminado) {
+    public void setEliminado(boolean eliminado) {
         this.eliminado = eliminado;
     }
 
@@ -284,8 +284,19 @@ public class Interno {
         this.id = id;
     }
     
+    public void desactivar(){
+        estado = false;
+    }
     
+    public boolean estaActivo(){
+        return estado;
+    }
     
+    public void eliminar(){
+        estado = false;
+    }
     
-    
+    public boolean estaEliminado(){
+        return estado;
+    }
 }
